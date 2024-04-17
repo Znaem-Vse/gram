@@ -1,0 +1,219 @@
+* {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+:root {
+    --background-color: #f3f3f3;
+    --back-gradient: #e0d4c7;
+    --header-text-color: #000;
+    --description-text-color: #595959;
+    --addresses-text-color: #3a3a3a;
+    --progress-bar-color: #c1c1c1;
+    --progress-bar-fill-color: #d7994c;
+    --theme-switcher-color: #191919;
+    --theme-switcher-shadow: #383838;
+    --separator: #383838;
+}
+
+.dark-theme {
+    --background-color: #191919;
+    --back-gradient: #271f16;
+    --header-text-color: #fff;
+    --description-text-color: #9c9c9c;
+    --addresses-text-color: #c1c1c1;
+    --progress-bar-color: #383838;
+    --progress-bar-fill-color: #d7994c;
+    --theme-switcher-color: #fff;
+    --theme-switcher-shadow: #c1c1c1;
+    --separator: #383838;
+}
+
+body {
+    background-color: var(--background-color);
+    font-family: sans-serif;
+    font-size: 18px;
+}
+
+header {
+    scale: 120%;
+    margin-top: 22vh;
+    margin-bottom: 22vh;
+    min-height: 600px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+h1,
+h2,
+h3 {
+    text-align: center;
+    line-height: 0.9em;
+    color: var(--header-text-color);
+    margin-bottom: 0.3em;
+
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 800;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+h1 {
+    font-size: 2.8em;
+}
+
+h2 {
+    font-size: 2.4em;
+}
+
+h3 {
+    font-size: 2.2em;
+    color: var(--separator);
+}
+
+p {
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+    font-variation-settings:
+        "slnt" 0;
+}
+
+a {
+    color: var(--description-text-color);
+}
+
+#web-content {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.back-shadow {
+    height: calc(600px + 44vh);
+    width: min(100%, calc(600px + 44vh));
+    background-image: radial-gradient(closest-side, var(--back-gradient), var(--background-color));
+    position: absolute;
+    z-index: -1;
+}
+
+.text-content {
+    width: 75%;
+    max-width: 680px;
+    text-align: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.link-icon {
+    max-width: 100%;
+    height: 52px;
+    width: auto;
+    transition: all 0.2s;
+}
+
+.dark-theme .link-icon {
+    filter: saturate(0%) invert(100%);
+}
+
+.link-icon:hover {
+    transform: translateY(-5px);
+    opacity: .7;
+}
+
+.arrow {
+    margin-top: 100px;
+    border: solid var(--description-text-color);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 10px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    transition: all 0.2s;
+}
+
+.arrow:hover {
+    opacity: .7;
+}
+
+#x-logo {
+    height: 45px;
+}
+
+#wallet-group {
+    width: 75%;
+    max-width: 1000px;
+    margin-top: 1em;
+}
+
+.logo {
+    display: block;
+    width: 30%;
+    margin-top: 2.5em;
+    margin-bottom: 1.3em;
+    max-width: 250px;
+    border-radius: 50%;
+}
+
+.sub-label {
+    font-size: 1.1em;
+    text-align: center;
+    line-height: 1.5em;
+    color: var(--description-text-color);
+    margin-bottom: 0.2em;
+}
+
+.wallet-group {
+    margin-bottom: 1.2em;
+    display: block;
+}
+
+.address {
+    color: var(--addresses-text-color);
+    line-height: 1.2em;
+    font-size: 1em;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 26px;
+    background-color: var(--progress-bar-color);
+    border-radius: 9px;
+    margin-top: 0.3em;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: var(--progress-bar-fill-color);
+    border-radius: 9px;
+    transition: all 1.5s ease-in-out;
+}
+
+.theme-switcher-container {
+    position: fixed;
+    top: 90%;
+    right: 2.5%;
+    z-index: 999;
+}
+
+.theme-switcher {
+    appearance: none;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: var(--theme-switcher-color);
+    cursor: pointer;
+    box-shadow: var(--theme-switcher-shadow) 0px 0px 10px;
+}
